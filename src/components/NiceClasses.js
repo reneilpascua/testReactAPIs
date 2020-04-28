@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ApiKeys from "../apikeys/apikeys";
 
 const NiceClasses = () => {
     const [classList, setClassList] = useState({});
@@ -9,7 +10,7 @@ const NiceClasses = () => {
         const fetchData = async () => {
             const res = await fetch("https://cipo-gsm-ised-isde-apicast-production.api.canada.ca/v1/classes?lang=eng", {
                 headers: { 
-                    'user-key': "",
+                    'user-key': ApiKeys.cipoapi,
                      }
             });
             const body = await res.json()
